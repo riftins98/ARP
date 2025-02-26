@@ -3,7 +3,7 @@ import heapq
 from heapq import heappush, heappop
 from math import trunc
 
-from arp_module import score_explanation
+from arp import score_explanation
 
 
 
@@ -22,7 +22,7 @@ def find_explanations(user_question, arps, schema, weights, distance_functions, 
         if not P.is_relevant_pattern(user_question, theta, delta):
             non_relevant_patterns.append(P)
             continue
-        print(f"ARP is relevant: F = {P.F}, V = {P.V}, agg = {P.agg}, A = {P.A}, M = {P.M}" )
+        print(f"Found relevant ARP: F = {P.F}, V = {P.V}, agg = {P.agg}, A = {P.A}, M = {P.M}" )
         tuple_per_ARP = total_tuples_searched
         total_relevant_patterns += 1
         refinements = {P_prime for P_prime in arps if P_prime.is_refinement(P) and P_prime not in non_relevant_patterns}
@@ -34,7 +34,7 @@ def find_explanations(user_question, arps, schema, weights, distance_functions, 
             if key not in seen:
                 seen.add(key)
                 unique_refinements.append(arp)
-
+        print(f"Found {len(unique_refinements)} refinements for this ARP")
         for P_prime in unique_refinements:
             retrieval_results = P_prime.retrieval_query(R)
             for fragment_key in retrieval_results:
@@ -68,9 +68,9 @@ def find_explanations(user_question, arps, schema, weights, distance_functions, 
                     updateExpl(score, explanation, explanations, k, count)
                     count += 1
         if tuple_per_ARP != total_tuples_searched:
-            print(f"Found {total_tuples_searched - tuple_per_ARP} relevant patterns for this ARP")
+            print(f"Found {total_tuples_searched - tuple_per_ARP} tuples to score for this ARP")
         else:
-            print("No relevant patterns found for this ARP")
+            print("No relevant tuples found for this ARP")
 
 
     # Convert back to positive scores and sort

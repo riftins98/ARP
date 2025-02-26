@@ -2,8 +2,8 @@ import sqlite3
 import pandas as pd
 from typing import List, Dict, Tuple
 from collections import defaultdict
-from arp_module import ARP
-from algorithm1 import find_explanations
+from arp import ARP
+from scoring_algorithem import find_explanations
 from mineArps import ARPMiner
 
 
@@ -128,15 +128,18 @@ class CrimeAnalyzer:
                 print(f"Grouping attributes: {pattern.F}")
                 print(f"Predictive attributes: {pattern.V}")
                 print(f"Pattern type: {pattern.M}")
-                print(f'\nFount {total_relevant_patterns} relevant patterns')
-                print(f'\nScored total of {total_tuples_searched} tuples')
+                
 
         if explanations:
+            print(f'\nFount {total_relevant_patterns} relevant patterns')
+            print(f'\nScored total of {total_tuples_searched} tuples')
             print("\nTop Explanations:")
             for rank, (score, explanation) in enumerate(explanations, 1):
                 print(f"\nRank {rank} (score: {score:.2f}):")
                 for attr, value in explanation.items():
                     print(f"  {attr}: {value}")
+        print("\n\n")
+
 
 
 def main():

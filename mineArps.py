@@ -3,7 +3,7 @@ from collections import defaultdict
 import numpy as np
 from scipy import stats
 from regression_models import RegressionModel
-from arp_module import ARP
+from arp import ARP
 
 
 class ARPMiner:
