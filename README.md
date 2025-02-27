@@ -77,3 +77,7 @@ python3 main.py
 ## Additional Information
 
 The database file (`crimes.db`) will be automatically downloaded when you follow the Git LFS setup instructions above.
+
+⚠️ **Important Performance Notes:**
+- Clean your RAM or restart your PC before running the program for optimal performance
+- The algorithm typically takes between 5-20 minutes to complete execution based on your system specifications
