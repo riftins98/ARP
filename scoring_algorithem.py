@@ -1,8 +1,5 @@
-from datetime import datetime
 import heapq
-from heapq import heappush, heappop
-from math import trunc
-
+from heapq import heappop
 from arp import score_explanation
 
 

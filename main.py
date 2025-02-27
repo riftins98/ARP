@@ -1,8 +1,6 @@
 import sqlite3
 import pandas as pd
-from typing import List, Dict, Tuple
-from collections import defaultdict
-from arp import ARP
+from typing import List, Dict
 from scoring_algorithem import find_explanations
 from mineArps import ARPMiner
 
@@ -11,13 +9,17 @@ class CrimeAnalyzer:
     def __init__(self, db_path: str):
         self.db_path = db_path
         self.schema = ["ID", "DateAccour", "AreaNumber", "Type"]
-        self.miner = ARPMiner(theta=0.01, delta=5, lambda_=0.01, Delta=5)
+        self.theta =0.3
+        self.delta = 5
+        self.lambda_ = 0.3
+        self.Delta = 5
+        self.miner = ARPMiner(self.theta, self.delta, self.lambda_, self.Delta)
 
         # Define weights for attributes
         self.weights = {
-            "ID": 0.1,
-            "DateAccour": 0.3,  # Higher weight for temporal patterns
-            "AreaNumber": 0.3,  # Important for spatial patterns
+            "ID": 0,
+            "DateAccour": 0.5,  # Higher weight for temporal patterns
+            "AreaNumber": 0.2,  # Important for spatial patterns
             "Type": 0.3
         }
 
@@ -105,10 +107,10 @@ class CrimeAnalyzer:
                 weights=self.weights,
                 distance_functions=self.distance_functions,
                 k=5,
-                theta=0.01,
-                delta=10,
-                lambda_=0.01,
-                Delta=10
+                theta=self.theta,
+                delta=self.delta,
+                lambda_=self.lambda_,
+                Delta=self.Delta
             )
 
             return unique_patterns, explanations, total_relevant_patterns, total_tuples_searched

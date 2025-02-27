@@ -1,7 +1,5 @@
 import itertools
 from collections import defaultdict
-import numpy as np
-from scipy import stats
 from regression_models import RegressionModel
 from arp import ARP
 
