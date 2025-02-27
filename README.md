@@ -31,8 +31,8 @@ The database file is stored using Git Large File Storage (LFS). To properly clon
 
 1. Install Git LFS:
    - Windows: Download and install from [git-lfs.github.com](https://git-lfs.github.com/)
-   - macOS: Run `brew install git-lfs`
-   - Linux: Run `sudo apt-get install git-lfs`
+   - macOS: Run ```bash brew install git-lfs```
+   - Linux: Run ```bash sudo apt-get install git-lfs```
 
 2. After installation, enable Git LFS:
 ```bash
