@@ -25,6 +25,25 @@ The dataset is stored in a db file (`crimes.db`) and is used as input for the AR
 
 Before running this project, make sure you have Python installed on your system. This project was developed with Python 3.x.
 
+### Git LFS Setup (Required for Database File)
+
+The database file is stored using Git Large File Storage (LFS). To properly clone it:
+
+1. Install Git LFS:
+   - Windows: Download and install from [git-lfs.github.com](https://git-lfs.github.com/)
+   - macOS: Run `brew install git-lfs`
+   - Linux: Run `sudo apt-get install git-lfs`
+
+2. After installation, enable Git LFS:
+```bash
+git lfs install
+```
+
+3. After cloning the repository, pull the database file:
+```bash
+git lfs pull
+```
+
 ### Required Libraries
 
 Install the required Python libraries using pip:
@@ -48,3 +67,7 @@ For macOS/Linux:
 ```
 python3 main.py
 ```
+
+## Additional Information
+
+The database file (`crimes.db`) will be automatically downloaded when you follow the Git LFS setup instructions above.
