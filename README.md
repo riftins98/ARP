@@ -20,3 +20,31 @@ The dataset used in this project contains **crime data from Los Angeles** for th
 - **Type**: The type of crime (e.g., theft, assault, burglary).
 
 The dataset is stored in a db file (`crimes.db`) and is used as input for the ARP framework.
+
+## Prerequisites
+
+Before running this project, make sure you have Python installed on your system. This project was developed with Python 3.x.
+
+### Required Libraries
+
+Install the required Python libraries using pip:
+
+```bash
+pip install pandas
+pip install scipy
+pip install numpy
+```
+
+### Running the Program
+
+Copy and paste the appropriate command in your terminal based on your operating system:
+
+For Windows:
+```
+python main.py
+```
+
+For macOS/Linux:
+```
+python3 main.py
+```
