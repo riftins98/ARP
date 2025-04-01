@@ -1,6 +1,6 @@
 # Aggregate Regression Patterns (ARP) Implementation
 
-This repository contains an implementation of the **Aggregate Regression Patterns (ARP)** framework as described in the paper:
+This repository contains an implementation of the **Aggregate Regression Patterns (ARP)** framework as described in the paper, as part of the Data Managment class:
 
 **"Going Beyond Provenance: Explaining Query Answers with Pattern-based Counterbalances"**  
 *Zhengjie Miao, Qitian Zeng, Boris Glavic, Sudeepa Roy*  
